@@ -34,29 +34,24 @@ Node* add_node_to_tail(Node*& head, int val)
     return temp;
 }
 
+void print_list(Node *head)
+// given the head of a linked list, 
+// it will print each node's value
+// on a line
+{
+    while (head != nullptr) {
+        std::cout << head->val << '\n';
+        head = head->next;
+    }
+}
+
 int main()
 {
-    // Node *head = nullptr;
-    // int n;
-    // while (std::cin >> n) {
-    //     add_node_to_tail(head, n);
-    // }
-    // Node *p = head;
-    // while (p != nullptr) {
-    //     std::cout << p->val << '\n';
-    //     p = p->next;
-    // }
     int n;
-    Node *head2 = nullptr;
+    Node *head = nullptr;
     Node *tail = nullptr;
     while (std::cin >> n) {
-        tail = add_node_to_tail(head2, n);
+        tail = add_node_to_tail(head, n);
     }
-    std::cout << "Tail: " << tail->val;
-    std::cout << "\nHead: " << head2->val;
-    // Node *p = head2;
-    // while (p != nullptr) {
-    //     std::cout << p->val << '\n';
-    //     p = p->next;
-    // }
+    print_list(head);
 }
