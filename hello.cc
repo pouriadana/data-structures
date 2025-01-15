@@ -45,6 +45,18 @@ void print_list(Node *head)
     }
 }
 
+void delete_list(Node *&header)
+// delete all nodes in a linked list
+{
+    Node *current = header;
+    while (current != nullptr) {
+        Node *temp = current->next;
+        delete current;
+        current = temp;
+    }
+    header = nullptr;
+}
+
 int main()
 {
     int n;
@@ -54,4 +66,5 @@ int main()
         tail = add_node_to_tail(head, n);
     }
     print_list(head);
+    delete_list(head);
 }
