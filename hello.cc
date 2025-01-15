@@ -12,21 +12,51 @@ Node* create_node(int val) {
     return n;
 }
 
-// Node* add_node_to_tail(Node* head, int val) {
-//     while (head->next != nullptr) {
-//         head = head->next;
-//     }
-//     Node *temp = new Node;
-// }
+Node* add_node_to_tail(Node*& head, int val) 
+// create new node at the end of the list
+// return the last node
+// leave the head node untouched
+{
+    Node *temp = new Node;
+    temp->val = val;
+    temp->next = nullptr;
+    if (head == nullptr) {
+        head = temp;
+        return head;
+    }
+
+    Node *p = head;
+    while (p->next != nullptr) {
+        p = p->next;
+    }
+
+    p->next = temp;
+    return temp;
+}
 
 int main()
 {
-    Node *head = create_node(7);
-    Node *head2 = create_node(17);
-    std::cout << head->val << '\t'
-              << head->next
-              << '\n'
-              << head2->val << '\t'
-              << head2->next
-              << '\n';
+    // Node *head = nullptr;
+    // int n;
+    // while (std::cin >> n) {
+    //     add_node_to_tail(head, n);
+    // }
+    // Node *p = head;
+    // while (p != nullptr) {
+    //     std::cout << p->val << '\n';
+    //     p = p->next;
+    // }
+    int n;
+    Node *head2 = nullptr;
+    Node *tail = nullptr;
+    while (std::cin >> n) {
+        tail = add_node_to_tail(head2, n);
+    }
+    std::cout << "Tail: " << tail->val;
+    std::cout << "\nHead: " << head2->val;
+    // Node *p = head2;
+    // while (p != nullptr) {
+    //     std::cout << p->val << '\n';
+    //     p = p->next;
+    // }
 }
