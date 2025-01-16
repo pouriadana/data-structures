@@ -9,6 +9,7 @@ int main()
     while (std::cin >> n) {
         tail = add_node_to_tail(head, n);
     }
+    add_node_to_start(head, 17);
     print_list(head);
     delete_list(head);
 }
