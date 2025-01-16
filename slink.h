@@ -46,6 +46,22 @@ Node* add_node_to_start(Node *&head, int val)
 
 }
 
+Node* search_list(Node *head, int val)
+// given a linked list and a value, 
+// return the node containing the value
+// or return nullptr
+{
+    Node *address = nullptr;
+    while (head != nullptr) {
+        if (head->val == val) {
+            address = head;
+            break;
+        }
+        head = head->next;
+    }
+    return address;
+} 
+
 void print_list(Node *head)
 // given the head of a linked list, 
 // it will print each node's value
