@@ -18,7 +18,7 @@ $(TARGET): $(OBJECTS)
 
 # Clean up build files
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+	del /Q $(subst /,\,$(OBJECTS)) $(TARGET)
 
 # Phony targets
 .PHONY: all clean
