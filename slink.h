@@ -35,6 +35,17 @@ Node* add_node_to_tail(Node*& head, int val)
     return temp;
 }
 
+Node* add_node_to_start(Node *&head, int val)
+// given linked list, add a node to its beginning
+{
+    Node *temp = new Node;
+    temp->next = head;
+    temp->val = val;
+    head = temp;
+    return head;
+
+}
+
 void print_list(Node *head)
 // given the head of a linked list, 
 // it will print each node's value
