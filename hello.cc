@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "slink.h"
 
 int main()
@@ -11,5 +12,16 @@ int main()
     }
     add_node_to_start(head, 17);
     print_list(head);
+    std::cout << "Enter a value to search: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin >> n;
+    Node *qans = search_list(head, n);
+    if (qans != nullptr) {
+        std::cout << "Found!\n";
+    }
+    else {
+        std::cout << "Not found";
+    }
     delete_list(head);
 }
