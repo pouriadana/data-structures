@@ -10,6 +10,7 @@ int main()
     while (std::cin >> n) {
         tail = add_node_to_tail(head, n);
     }
+    std::cout << "Tail is " << tail->val << std::endl;
     add_node_to_start(head, 17);
     print_list(head);
     std::cout << "Enter a value to search: ";
@@ -21,7 +22,7 @@ int main()
         std::cout << "Found!\n";
     }
     else {
-        std::cout << "Not found";
+        std::cout << "Not found\n";
     }
     std::cout << "Enter a value to delete from the list: ";
     std::cin >> n;
