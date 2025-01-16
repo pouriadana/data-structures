@@ -52,12 +52,11 @@ Node* search_list(Node *head, int val)
 // or return nullptr
 {
     Node *address = nullptr;
-    while (head != nullptr) {
+    for (; head != nullptr; head = head->next) {
         if (head->val == val) {
             address = head;
             break;
         }
-        head = head->next;
     }
     return address;
 } 
