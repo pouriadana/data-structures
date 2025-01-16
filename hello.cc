@@ -23,5 +23,9 @@ int main()
     else {
         std::cout << "Not found";
     }
+    std::cout << "Enter a value to delete from the list: ";
+    std::cin >> n;
+    remove_node(head, n);
+    print_list(head);
     delete_list(head);
 }

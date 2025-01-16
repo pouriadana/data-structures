@@ -61,6 +61,22 @@ Node* search_list(Node *head, int val)
     return address;
 } 
 
+void remove_node(Node *head, int val)
+// given a linked list and a value,
+// remove the node containing that 
+// value. If the value is absent, don't
+// do anything
+{
+    Node *node = search_list(head, val); 
+    if ( node != nullptr) {
+        while (head->next != node) {
+            head = head->next;
+        }
+        head->next = node->next;
+        delete node;
+    }
+}
+
 void print_list(Node *head)
 // given the head of a linked list, 
 // it will print each node's value
