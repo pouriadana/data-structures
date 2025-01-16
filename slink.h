@@ -6,14 +6,14 @@ struct Node {
     Node *next;
 };
 
-Node* create_node(int val) {
+Node *create_node(int val) {
     Node *n = new Node;
     n->val = val;
     n->next = nullptr;
     return n;
 }
 
-Node* add_node_to_tail(Node*& head, int val) 
+Node *add_node_to_tail(Node*& head, int val) 
 // create new node at the end of the list
 // return the last node
 // leave the head node untouched
@@ -35,7 +35,7 @@ Node* add_node_to_tail(Node*& head, int val)
     return temp;
 }
 
-Node* add_node_to_start(Node *&head, int val)
+Node *add_node_to_start(Node *&head, int val)
 // given linked list, add a node to its beginning
 {
     Node *temp = new Node;
@@ -46,7 +46,7 @@ Node* add_node_to_start(Node *&head, int val)
 
 }
 
-Node* search_list(Node *head, int val)
+Node *search_list(Node *head, int val)
 // given a linked list and a value, 
 // return the node containing the value
 // or return nullptr
