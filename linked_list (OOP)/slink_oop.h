@@ -7,6 +7,7 @@ class List {
         List(T val);
         void push(T val);
         typename List<T>::Node *get() const;
+        void print_list() const;
     private:
         struct Node {
             T val;
@@ -35,6 +36,14 @@ template<typename T>
 typename List<T>::Node *List<T>::get() const 
 {
     return head;
+}
+
+template<typename T>
+void List<T>::print_list() const
+{
+    for (Node *t = head; t != nullptr; t = t->next) {
+        std::cout << t->val << '\n';
+    }
 }
 
 #endif 
