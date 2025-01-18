@@ -5,7 +5,7 @@ template<typename T>
 class List {
     public:
         List(T val);
-        void add(T val);
+        void push(T val);
         typename List<T>::Node *get() const;
     private:
         struct Node {
@@ -22,7 +22,7 @@ List<T>::List(T val)
 }
 
 template<typename T>
-void List<T>::add(T val) {
+void List<T>::push(T val) {
     Node *new_node = new Node{val, nullptr}; 
     Node *t = head;
     while (t->next != nullptr) {
